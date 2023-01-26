@@ -72,12 +72,12 @@ const Login = () => {
   };
 
   const [showPassword, setShowPassword] = useState(false);
-  const token = getLocalStorage("testingToken");
-  useEffect(() => {
-    if (token) {
-      navigate("/");
-    }
-  }, [token, navigate]);
+  // const token = getLocalStorage("testingToken");
+  // useEffect(() => {
+  //   if (token) {
+  //     navigate("/");
+  //   }
+  // }, [token, navigate]);
 
   return (
     <>

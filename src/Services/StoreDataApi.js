@@ -16,12 +16,12 @@ export const StoreDataApi = createApi({
   endpoints: (builder) => ({
     // user
     getStoreHistory: builder.query({
-      query: () => `/secure/api/get-root-store`,
+      query: () => `/public/api/get-root-store`,
       providesTags: ["userStore"], // automatic-data fetching
     }),
     addStoreInfo: builder.mutation({
       query: (body) => ({
-        url: "/secure/api/add-user-info",
+        url: "/public/api/add-user-info",
         method: "POST",
         body,
       }),
@@ -29,7 +29,7 @@ export const StoreDataApi = createApi({
     }),
     addMoreInfo: builder.mutation({
       query: (body) => ({
-        url: "/secure/api/get-next-store",
+        url: "/public/api/get-next-store",
         method: "POST",
         body,
       }),
@@ -37,7 +37,7 @@ export const StoreDataApi = createApi({
     }),
     addSecondSectors: builder.mutation({
       query: (body) => ({
-        url: "/secure/api/get-next-store",
+        url: "/public/api/get-next-store",
         method: "POST",
         body,
       }),
@@ -45,14 +45,14 @@ export const StoreDataApi = createApi({
     }),
     addThirdSectors: builder.mutation({
       query: (body) => ({
-        url: "/secure/api/get-next-store",
+        url: "/public/api/get-next-store",
         method: "POST",
         body,
       }),
       invalidatesTags: ["userStore"], // automatic-data fetching
     }),
     getUserStoreHistory: builder.query({
-      query: () => `/secure/api/get-user-store-info`,
+      query: () => `/public/api/get-user-store-info`,
       providesTags: ["userStore"], // automatic-data fetching
     }),
   }),

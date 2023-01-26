@@ -27,9 +27,7 @@ const Header = ({ hidePackageRoute }) => {
   window.addEventListener("scroll", stickyNavbar);
   const [showToggleNav, setShowToggleNav] = useState(false);
   return (
-    <div
-      className={`rf_frontpage_header_wrapper ${stickyNav ? "sticky" : ""}`}
-    >
+    <div className={`rf_frontpage_header_wrapper ${stickyNav ? "sticky" : ""}`}>
       <div className="container">
         <div className="rf_front_navbar">
           <div className="toggler_icon">
@@ -40,7 +38,15 @@ const Header = ({ hidePackageRoute }) => {
               <img src={Logo} alt="logo" />
             </CustomLink>
             <ul className="rf_front_navbar_lists2">
-              {getLocalStorage("testingToken") ? (
+              <li className="rf_front_navbar_list2 ">
+                <CustomLink
+                  href="/dashboard"
+                  className="rf_front_nav_link2 rf_front_navbar_dashboard"
+                >
+                  Dashboard
+                </CustomLink>
+              </li>
+              {/* {getLocalStorage("testingToken") ? (
                 <li className="rf_front_navbar_list2 ">
                   <CustomLink
                     href="/dashboard"
@@ -58,8 +64,8 @@ const Header = ({ hidePackageRoute }) => {
                     Login
                   </CustomLink>
                 </li>
-              )}
-              {getLocalStorage("testingToken") ? (
+              )} */}
+              {/* {getLocalStorage("testingToken") ? (
                 <li className="rf_front_navbar_list2" onClick={handleLogout}>
                   <CustomLink
                     href="/login"
@@ -77,7 +83,7 @@ const Header = ({ hidePackageRoute }) => {
                     Register
                   </CustomLink>
                 </li>
-              )}
+              )} */}
             </ul>
           </div>
           <div
@@ -91,7 +97,12 @@ const Header = ({ hidePackageRoute }) => {
                   Home
                 </CustomLink>
               </li>
-              {getLocalStorage("testingToken") ? (
+              <li className="rf_front_navbar_list register">
+                <CustomLink href="/dashboard" className="rf_front_nav_link">
+                  Dashboard
+                </CustomLink>
+              </li>
+              {/* {getLocalStorage("testingToken") ? (
                 <li className="rf_front_navbar_list register">
                   <CustomLink href="/dashboard" className="rf_front_nav_link">
                     Dashboard
@@ -103,8 +114,8 @@ const Header = ({ hidePackageRoute }) => {
                     Login
                   </CustomLink>
                 </li>
-              )}
-              {getLocalStorage("testingToken") ? (
+              )} */}
+              {/* {getLocalStorage("testingToken") ? (
                 <li
                   className="rf_front_navbar_list login"
                   onClick={handleLogout}
@@ -119,7 +130,7 @@ const Header = ({ hidePackageRoute }) => {
                     Register
                   </CustomLink>
                 </li>
-              )}
+              )} */}
             </ul>
           </div>
         </div>

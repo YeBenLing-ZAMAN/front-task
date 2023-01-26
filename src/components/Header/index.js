@@ -15,7 +15,9 @@ import {
   removeLocalStorage,
 } from "../../utils/function/localStorage";
 import { useGetLoginUserQuery } from "../../Services/userApi";
+import { useNavigate } from "react-router-dom";
 const Header = ({ show, setShow }) => {
+  const navigate = useNavigate();
   // avater clckable menu
   const profileRef = useRef(null);
   const [openMenu, setOpenMenu] = useState(false);
@@ -43,6 +45,7 @@ const Header = ({ show, setShow }) => {
   }, [value]);
   // handle logout
   const handleLogout = () => {
+    navigate("/");
     removeLocalStorage("testingToken");
     window.location.reload();
   };

@@ -6,11 +6,6 @@ const StoreHistoryTable = ({ data }) => {
     { id: "id", label: "S.N", minWidth: 20 },
     { id: "name", label: "Name", minWidth: 100 },
     {
-      id: "email",
-      label: "Email",
-      minWidth: 80,
-    },
-    {
       id: "sectors",
       label: "Sectors",
       minWidth: 140,
@@ -22,11 +17,10 @@ const StoreHistoryTable = ({ data }) => {
     },
   ];
 
-  function createData(id, name, email, sectors, agree) {
+  function createData(id, name, sectors, agree) {
     return {
       id,
       name,
-      email,
       sectors,
       agree,
     };
@@ -35,7 +29,6 @@ const StoreHistoryTable = ({ data }) => {
     createData(
       i + 1,
       d?.name,
-      d?.email,
       d?.sectors.map((item) => <p key={item + 1}>{item}</p>),
       d?.agree ? "True" : "False"
     )
@@ -45,7 +38,7 @@ const StoreHistoryTable = ({ data }) => {
       columns={columns}
       rows={rows}
       perPageShow={6}
-      tableHeight={440}
+      tableHeight={600}
       className="common_table"
     />
   );

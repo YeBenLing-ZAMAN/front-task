@@ -7,14 +7,15 @@ import { routers } from "./_routers";
 const AppContent = () => {
   const { data } = useGetLoginUserQuery();
   const navigate = useNavigate();
-  const token = getLocalStorage("testingToken");
-  useEffect(() => {
-    if (!token) {
-      navigate("/login");
-    }
-  }, [navigate, token]);
+  // const token = getLocalStorage("testingToken");
+  // useEffect(() => {
+  //   if (!token) {
+  //     navigate("/login");
+  //   }
+  // }, [navigate, token]);
 
-  const perRoute = routers?.filter((rt) => rt?.permission?.includes(data?.data?.role));
+  // const perRoute = routers?.filter((rt) => rt?.permission?.includes(data?.data?.role));
+  const perRoute = routers?.filter((rt) => rt?.permission?.includes('user'));
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

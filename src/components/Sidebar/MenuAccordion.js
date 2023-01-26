@@ -13,16 +13,15 @@ const MenuAccordion = ({ d, sideBarShow, logout, userRole }) => {
     setCollapse(index);
   };
   const device = useBreakpoints();
-  const perRoute = d.filter((rt) => rt?.permission?.includes(userRole));
+  // const perRoute = d.filter((rt) => rt?.permission?.includes(userRole));
+  const perRoute = d.filter((rt) => rt?.permission?.includes("user"));
 
   return (
     <>
       {perRoute.map((d, i) => (
         <li
           key={d.id}
-          className={`rf_sidebar_menu_list ${
-            d.dropdown ? "submenu" : ""
-          }`}
+          className={`rf_sidebar_menu_list ${d.dropdown ? "submenu" : ""}`}
           id={d.id}
         >
           <CustomLink
